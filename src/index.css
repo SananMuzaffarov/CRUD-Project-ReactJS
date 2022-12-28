@@ -15,7 +15,7 @@ body{
 table td{
   width: 200px;
   height: 100px;
-  background-color: aqua;
+  background-color: rgb(7, 62, 62);
   text-align: center;
   color: #fff;
 }
@@ -51,6 +51,9 @@ table td .delete:hover{
 .addForm input{
   width: 210px;
   height: 30px;
+}
+.addForm .price{
+  margin-left: 10px;
 }
 .addForm input[type="text"]{
   padding: 5px 10px;
