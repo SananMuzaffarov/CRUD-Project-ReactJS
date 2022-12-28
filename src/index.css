@@ -12,3 +12,60 @@ body{
   justify-content: center;
   align-items: center;
 }
+table td{
+  width: 200px;
+  height: 100px;
+  background-color: aqua;
+  text-align: center;
+  color: #fff;
+}
+table td button{
+  padding: 5px 10px;
+  border-radius: 5%;
+  cursor: pointer;
+}
+table td .edit{
+  border: 1px solid green;
+  background-color: green;
+  color: #fff;
+  transition: 0.6s ease;
+}
+table td .edit:hover{
+  background-color: rgb(3, 71, 3);
+  border: 1px solid rgb(3, 71, 3);
+}
+table td .delete{
+  border: 1px solid red;
+  background-color: red;
+  color: #fff;
+  margin: 0 0 0 5px;
+  transition: 0.6s ease;
+}
+table td .delete:hover{
+  background-color: rgb(92, 5, 5);
+  border: 1px solid rgb(92, 5, 5);
+}
+.addForm{
+  margin-bottom: 30px;
+}
+.addForm input{
+  width: 210px;
+  height: 30px;
+}
+.addForm input[type="text"]{
+  padding: 5px 10px;
+}
+.inputPrice{
+  margin-left: 10px;
+}
+.addForm button{
+  color: #fff;
+  width: 140px;
+  height: 30px;
+  background-color: rgb(31, 171, 5);
+  border: 1px solid rgb(31, 171, 5);
+  margin-left: 10px;
+}
+.addForm button:hover{
+  background-color: rgb(5, 86, blue);
+}
