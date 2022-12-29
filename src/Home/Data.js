@@ -1,7 +1,7 @@
-const Lists = [
+const Datas = [
     {
         id: 1,
-        name: "HP",
+        name: "Asus Tuf Gaming",
         price: 2222
     },
     {
@@ -25,4 +25,4 @@ const Lists = [
         price: 2999
     }
 ];
-export default Lists;
+export default Datas;

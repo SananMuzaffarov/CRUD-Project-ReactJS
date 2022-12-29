@@ -1,21 +1,18 @@
 import React, { useRef, useState } from 'react';
-import Lists from './List';
+import Datas from './Data';
 
 const Crud = () => {
     
-    const [lists, setList] = useState(Lists)
+    const [lists, setList] = useState(Datas)
 
     const [updateState, setUpdateState] = useState(-1)
     
     return(
-        <div className='crud'>
-            <div>
-            <AddList setList = {setList }/>
+        <div className='container'>
+            <div className='wrapper'>
+            <AddList setList = {setList}/>
             <form onSubmit={handleSubmit}>
-            <table>
-                {
-                    lists.map((current) => (
-                        updateState === current.id ? <EditList current={current} lists={lists} setList={setList}/> :
+            <table>{lists.map((current) => (updateState === current.id ? <EditList current={current} lists={lists} setList={setList}/> :
                         <tr>
                             <td>{current.name}</td>
                             <td>{current.price}</td>
@@ -24,32 +21,32 @@ const Crud = () => {
                                 <button className='delete' type='button' onClick={() => handleDelete(current.id)}>Delete</button>
                             </td>
                         </tr>
-                    ))
-                }
+                    ))}
             </table>
             </form>
             </div>
         </div>
-        )
+    )
 
-    function handleEdit(id){
-        setUpdateState(id)
-    }
+// Functions Part
+function handleEdit(id){
+    setUpdateState(id)
+}
 
-    function handleDelete(id){
-        const newlist = lists.filter((li) => li.id !== id)
-        setList(newlist)
-    }
+function handleDelete(id){
+    const newlist = lists.filter((li) => li.id !== id)
+    setList(newlist)
+}
 
-    function handleSubmit(event){
-        event.preventDefault()
-        const name = event.target.elements.name.value
-        const price = event.target.elements.price.value
-        const newlist = lists.map((li) => (
-            li.id === updateState ? {...li, name:name, price: price} : li
-        ))
-        setList(newlist)
-        setUpdateState(-1)
+function handleSubmit(event){
+    event.preventDefault()
+    const name = event.target.elements.name.value
+    const price = event.target.elements.price.value
+    const newlist = lists.map((li) => (
+        li.id === updateState ? {...li, name:name, price: price} : li
+    ))
+    setList(newlist)
+    setUpdateState(-1)
     }
 }
 
@@ -102,7 +99,7 @@ function AddList({setList}) {
     }
 
     return(
-        <form className='addForm' onSubmit={handleSubmit}>
+        <form className='addDataForm' onSubmit={handleSubmit}>
             <input type="text" name="name" placeholder="Enter Name" ref={nameRef}/>
             <input type="text" name="price" placeholder="Enter Price" ref={priceRef} className="price"/>
             <button type="submit">Add</button>
